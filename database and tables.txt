@@ -1,0 +1,110 @@
+A database is a container that holds one or more tables along with other database objects such as views, indexes, stored procedures, etc
+It is used to organize and manage data in a structured manner, providing an efficient way to store, retrieve, and manipulate information.
+w
+Example of creating a database:
+CREATE DATABASE mydatabase;
+Table:
+A table is a collection of rows and columns that stores data in a structured format.
+Each column in a table represents a specific attribute, and each row represents a record containing values for each attribute.
+Example of creating a table:
+CREATE TABLE employees (
+  employee_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+ id INT
+);
+Column:
+
+A column represents a specific attribute or field in a table and defines the type of data it can store.
+Example of adding a column to an existing table:
+ALTER TABLE employees
+ADD COLUMN hire_date DATE;
+Row:
+
+A row, also known as a record or tuple, represents a single set of values in a table.
+Each row corresponds to a specific entry or entity in the table.
+Example of inserting data into a table:
+INSERT INTO employees (employee_id, first_name, last_name, salary, hire_date)
+VALUES (1, 'John', 'Doe', 5000, '2022-01-01');
+---------------------------------------------------------------------------------------------------------------------
+
+In SQL, DROP DATABASE is used to delete a database from our Database Management System.
+
+Example
+DROP DATABASE my_database;
+
+
+In  SQL, DROP TABLE is used to delete the tables in our database.
+
+Example
+-- delete Shippings table
+DROP TABLE Shippings;
+----------------
+In SQL, the ALTER TABLE command is used to modify the structure of an existing table like adding, deleting, renaming columns, etc.
+
+Example
+ALTER TABLE Customers
+ADD phone varchar(10);
+-----------------------------------------------------------------------------------------------------------------------------------
+
+The SELECT statement in SQL is used to retrieve data from one or more tables. It is one of the most frequently used statements, and it allows you to specify the columns you want to retrieve, the table from which to retrieve them, and conditions to filter the results. Here is a basic syntax for the SELECT statement:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+column1, column2, ...: The columns you want to retrieve. You can use an asterisk (*) to select all columns.
+
+table_name: The name of the table from which to retrieve the data.
+
+condition: An optional clause that allows you to filter the results based on a specified condition.
+
+The SELECT statement in SQL is used to retrieve data from one or more tables. It is one of the most frequently used statements, and it allows you to specify the columns you want to retrieve, the table from which to retrieve them, and conditions to filter the results. Here is a basic syntax for the SELECT statement:
+
+sql
+Copy code
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+column1, column2, ...: The columns you want to retrieve. You can use an asterisk (*) to select all columns.
+
+table_name: The name of the table from which to retrieve the data.
+
+condition: An optional clause that allows you to filter the results based on a specified condition.
+
+Examples:
+Selecting All Columns from a Table:
+SELECT *
+FROM employees;
+
+Selecting Specific Columns:
+SELECT employee_id, first_name, last_name
+FROM employees;
+
+Using WHERE Clause for Filtering:
+SELECT product_name, price
+FROM products
+WHERE price > 50;
+
+Using Aliases for Column Names:
+SELECT first_name AS "First Name", last_name AS "Last Name"
+FROM employees;
+
+Ordering Results with ORDER BY:
+SELECT product_name, price
+FROM products
+ORDER BY price DESC;
+
+Limiting the Number of Rows with LIMIT:
+SELECT product_name, price
+FROM products
+LIMIT 5;
+
+Combining Conditions with AND, OR:
+SELECT product_name, price
+FROM products
+WHERE category = 'Electronics' AND price > 100;
+
+Aggregate Functions (COUNT, AVG, SUM):
+
+SELECT COUNT(*) AS total_records
+FROM employees;
+

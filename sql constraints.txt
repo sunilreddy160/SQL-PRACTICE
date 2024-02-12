@@ -1,0 +1,38 @@
+in sql constraints are rules and restrictions that are applied to tables and columns to enforce data integrity. They ensure that data stored in the database follows certain criteria, preventing the entry of invalid or inconsistent information. Here are some common types of constraints in SQL:
+
+PRIMARY KEY:
+
+Ensures that a column (or a set of columns) uniquely identifies each row in a table.
+Example:CREATE TABLE example_table (
+  id INT PRIMARY KEY,
+  name VARCHAR(50)
+);
+FOREIGN KEY:
+
+Establishes a link between two tables by referencing the primary key of one table as a foreign key in another table. It ensures referential integrity.
+Example:CREATE TABLE orders (
+  order_id INT PRIMARY KEY,
+  product_id INT,
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+UNIQUE:
+
+Ensures that all values in a column (or a set of columns) are unique.
+Example:CREATE TABLE employees (
+  employee_id INT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE
+);
+CHECK:
+
+Validates that all values in a column satisfy a specific condition.
+Example:CREATE TABLE students (
+  student_id INT PRIMARY KEY,
+  age INT CHECK (age >= 18)
+);
+NOT NULL:
+
+Ensures that a column cannot contain NULL values.
+Example:CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  customer_name VARCHAR(50) NOT NULL
+);
